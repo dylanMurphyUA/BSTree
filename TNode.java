@@ -2,6 +2,7 @@
 public class TNode {
 	TNode left, right;
     String data;
+    int frequency;
     
     public TNode(){
     		left = null;
@@ -39,5 +40,8 @@ public class TNode {
     public String getData()
     {
         return data;
+    }
+    public void addFreq(){
+    	frequency++;
     }
 }
