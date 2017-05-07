@@ -1,10 +1,11 @@
 
 public class TNode {
-	TNode left, right;
+	TNode left, right, parent;
     String data;
-    int frequency;
+    int frequency = 1;
     
     public TNode(){
+    		parent = null;
     		left = null;
         right = null;
         data = null;
@@ -14,6 +15,14 @@ public class TNode {
         right = null;
         data = s;
     }
+    public TNode getParent(){
+    	return parent;
+    }
+    public void setParent(TNode t){
+    		this.parent = t;
+    }
+    
+    
     public TNode getLeft(){
     	return left;
     }
@@ -43,5 +52,9 @@ public class TNode {
     }
     public void addFreq(){
     	frequency++;
+    	
+    }
+    public int getFreq(){
+    	return 	frequency;
     }
 }

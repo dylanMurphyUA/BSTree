@@ -1,7 +1,7 @@
-
+import java.util.ArrayList;
 public class Tree {
 	private TNode root;
-	
+	ArrayList<String> list = new ArrayList<String>();
 	public Tree(){
 		root=null;
 	}
@@ -23,22 +23,43 @@ public class Tree {
 		}
 	}
 	private void insert(TNode t, String s){
-		if(s.compareTo(t.getData()) < 0){
+		if(s.compareToIgnoreCase(t.getData()) < 0){
 			if(t.left != null){
 				insert(t.left, s);
 			}
 			else{
-				t.left = new TNode(s);
+				TNode newNode = new TNode(s);
+				t.left = newNode;
+				newNode.setParent(t);
 			}
-		}else  if(s.compareTo(t.getData()) > 0){
+		}else  if(s.compareToIgnoreCase(t.getData()) > 0){
 			if(t.right != null){
 				insert(t.right, s);
 			}
 			else{
-				t.right = new TNode(s);
+				TNode newNode = new TNode(s);
+				t.right = newNode;
+				newNode.setParent(t);
 			}
+		}else{
+			t.addFreq();
 		}
 	}
+	public void inorder()
+    {
+         inorder(root);
+    }
+    
+    private void inorder(TNode r)
+     {
+         if (r != null)
+         {
+             inorder(r.getLeft());
+             System.out.println(r.getData() +" "+r.getFreq());
+             list.add(r.getData());
+             inorder(r.getRight());
+         }
+     }
 	
 	
 }
