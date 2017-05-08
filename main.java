@@ -15,7 +15,7 @@ public class main {
 		t.insert("data");*/
 		
 		
-		
+		//This is the filereader that scans for words in a .txt file
 		try{
 			Scanner s = new Scanner(new FileReader(filename));
 			while(s.hasNext()){
@@ -28,6 +28,7 @@ public class main {
 		    e.printStackTrace();
 		}
 		t.inorder();
+		
 
 	}
 

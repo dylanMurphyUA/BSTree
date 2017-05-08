@@ -35,6 +35,12 @@ public class TNode {
     {
         left = t;
     }
+    public boolean hasLeft(){
+    	return this.left != null;
+    }
+    public boolean hasRight(){
+    	return this.right != null;
+    }
 
     public void setRight(TNode t)
     {
