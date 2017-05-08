@@ -1,3 +1,5 @@
+/*this histogram will show the words in the first two verses of the raven by edgar allen poe
+
 import java.util.Scanner;
 import java.io.Reader;
 import java.io.FileReader;
